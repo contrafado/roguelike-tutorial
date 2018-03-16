@@ -84,7 +84,7 @@ def cast_confuse(*args, **kwargs):
 
     for entity in entities:
         if entity.x == target_x and entity.y == target_y and entity.ai:
-            confused_ai = ConfusedMonseter(entity.ai, 10)
+            confused_ai = ConfusedMonster(entity.ai, 10)
 
             confused_ai.owner = entity
             entity.ai = confused_ai
@@ -93,6 +93,6 @@ def cast_confuse(*args, **kwargs):
 
             break
     else:
-        result.append({'consumed': False, 'message': Message('Nothing exists there but void...cast thy magik elsewhere...', libtcod.yellow)})
+        results.append({'consumed': False, 'message': Message('Nothing exists there but void...cast thy magik elsewhere...', libtcod.yellow)})
 
     return results
